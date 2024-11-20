@@ -1,11 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello coursera</title>
-</head>
+<!--I do NOT consider an empty item, i.e., , , as an item-->
+
+<!doctype html>
+<html ng-app="lunch_app" lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
 <body>
-    <h1>Hello coursera students!</h1>
+   <div ng-controller="LunchController" class="container">
+     <h1>Lunch Checker</h1>
+
+         <div  class="form-group">
+             <input id="lunch-menu" type="text" ng-model="food_list"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button ng-click="food_click()" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-style="text | styleFilter:fontColor:borderColor">
+            <p ng-style="messageStyle">{{ message }}</p>
+         </div>
+   </div>
+
 </body>
 </html>
+<!--I do NOT consider an empty item, i.e., , , as an item-->
